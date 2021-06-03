@@ -33,3 +33,13 @@ def about():
         message='Your application description page.',
         year=datetime.now().year
     )
+
+@route('/otzivi')
+@view('otzivi')
+def otzivi():
+    """Renders the about page."""
+    return dict(
+        title='Reviews',
+        message='Your application description page.',
+        year=datetime.now().year
+    )
