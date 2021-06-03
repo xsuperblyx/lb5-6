@@ -4,14 +4,14 @@ import pdb
 import json
 @post('/home', method='post')
 def my_form():
-     questions={}
-     mail = request.forms.get('ADRESS')
-     question = request.forms.get('QUEST')
-     regex = '^(\w|\.|\_|\-)+[@](\w|\_|\-|\.)+[.]\w{2,3}$'
-     if mail=="" or question=="": return "You didn't write email or question"
+     mail = 'qwerty@mail.ru'
+     questions = {}
+     qwer='dsadsadsacsfg'
+     if mail=="" or qwer=="": return "You didn't write email or question"
      else: 
-        if (re.search(regex, mail)):
-            questions[mail]=question
+        match=re.search(r'([@]mail[.]ru)',mail)
+        if match!=None:
+            questions[mail]=qwer
             with open ('questions.txt', 'a') as outfile:
                 x = json.dumps(questions)
                 open('questions.txt', 'a').write('\n' + x)
